@@ -10,7 +10,7 @@ Vue.use(ElementUI);
 // 引入路由
 import router from "./router/router";
 import VueRouter from "vue-router";
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 
 
