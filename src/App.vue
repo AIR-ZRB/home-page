@@ -7,6 +7,7 @@
                 mode="horizontal"
                 background-color="transparent"
                 :router="true"
+                active-text-color="#fff"
             >
                 <el-menu-item
                     v-for="item in navList"
@@ -60,7 +61,7 @@ body,
     display: flex;
     justify-content: flex-end;
     position: fixed;
-    background: rgba(255, 255, 255, 0.05);
+    // background: rgba(255, 255, 255, 0.05);
     top: 0;
     .el-menu.el-menu--horizontal {
         border-bottom: 0;
