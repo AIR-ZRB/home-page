@@ -1,7 +1,6 @@
 <template>
     <div class="home">
         <!-- 主页头部 -->
-
         <div class="me-message">
             <div class="me-message-box">
                 <div class="author"></div>
@@ -100,7 +99,8 @@ export default {
         margin: 0 auto;
         overflow: hidden;
         margin-bottom: 50px;
-        background: skyblue;
+        background: #fff;
+        box-shadow: 0 4px 8px 6px rgba(7,17,27,0.06);
         .icons {
             width: 20px;
             height: 20px;
@@ -121,6 +121,7 @@ export default {
         &:hover {
             .blog-image {
                 transform: scale(1.05);
+                cursor: pointer;
             }
         }
     }
