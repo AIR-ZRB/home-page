@@ -18,6 +18,10 @@
             </el-menu>
         </nav>
         <router-view></router-view>
+
+
+
+
     </div>
 </template>
 
@@ -63,6 +67,11 @@ body,
     height: 100%;
 }
 
+.copyright {
+    position: absolute;
+    bottom: 0;
+}
+
 .nav {
     width: 100%;
     display: flex;
@@ -71,6 +80,7 @@ body,
     // background: rgba(255, 255, 255, 0.05);
     top: 0;
     z-index: 9999;
+    transition: all .5s;
     .el-menu.el-menu--horizontal {
         border-bottom: 0;
     }
