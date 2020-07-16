@@ -1,42 +1,19 @@
 <template>
     <div id="app">
-        <nav class="nav" ref="nav">
-            <el-menu
-                :default-active="activeIndex"
-                class="el-menu-demo"
-                mode="horizontal"
-                background-color="transparent"
-                :router="true"
-                active-text-color="#000"
-            >
-                <el-menu-item
-                    v-for="item in navList"
-                    :key="item.listName"
-                    :index="item.listName"
-                    >{{ item.listCNName }}</el-menu-item
-                >
-            </el-menu>
-        </nav>
-        <router-view></router-view>
-
-
-
-
+       <Home />
     </div>
 </template>
 
 <script>
+import Home from "./pages/home.vue"
 export default {
     data() {
         return {
             activeIndex: "home",
-            navList: [
-                { listName: "home", listCNName: "主页" },
-                { listName: "blog", listCNName: "博客" },
-                { listName: "items", listCNName: "个人项目" },
-                { listName: "leaveWord", listCNName: "留言" },
-            ],
         };
+    },
+    components: {
+        Home
     },
     methods: {
         navTop(windowScrollTop) {
@@ -49,21 +26,18 @@ export default {
     mounted() {
         window.onscroll = () => this.navTop(window.pageYOffset);
     },
-    components: {},
 };
 </script>
 
-<style lang="scss">
+<style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
-body,
-#app {
-    // width: 100%;
+html,body,#app {
+    /* // width: 100%; */
     height: 100%;
 }
 
@@ -77,14 +51,15 @@ body,
     display: flex;
     justify-content: flex-end;
     position: fixed;
-    // background: rgba(255, 255, 255, 0.05);
+    /* // background: rgba(255, 255, 255, 0.05); */
     top: 0;
     z-index: 9999;
     transition: all .5s;
-    .el-menu.el-menu--horizontal {
+   
+}
+ .el-menu.el-menu--horizontal {
         border-bottom: 0;
     }
-}
 
 *::-webkit-scrollbar {
     width: 8px;
