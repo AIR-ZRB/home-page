@@ -10,18 +10,28 @@ export default {};
 
 <style lang="scss">
 .glass-piece {
-    width: 100px;
-    height: 100px;
-    /* Google Chrome */
+    width: 80px;
+    height: 80px;
 
     /* 设置背景半透明黑色 */
-    // background-color: #f2f2f2;
-    backdrop-filter: blur(30px);
-    // opacity: 0.4;
-    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    // background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap   ;
+position: relative;
+    img {
+
+      width: 25px;
+      height: 25px;
+    }
+    .description {
+      position: absolute;
+      bottom: -30px;
+      color: #fff;
+    }
 }
 </style>

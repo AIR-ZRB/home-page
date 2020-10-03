@@ -1,30 +1,17 @@
 <template>
     <div id="app">
-       <Home />
+        <Home />
     </div>
 </template>
 
 <script>
-import Home from "./pages/home.vue"
+import Home from "@/pages/home.vue";
 export default {
     data() {
-        return {
-            activeIndex: "home",
-        };
+        return {};
     },
     components: {
-        Home
-    },
-    methods: {
-        navTop(windowScrollTop) {
-            windowScrollTop > 0
-                ? (this.$refs.nav.style.backgroundColor =
-                      "rgba(255,255,255,.95)")
-                : (this.$refs.nav.style.backgroundColor = "");
-        },
-    },
-    mounted() {
-        window.onscroll = () => this.navTop(window.pageYOffset);
+        Home,
     },
 };
 </script>
@@ -36,31 +23,13 @@ export default {
     box-sizing: border-box;
 }
 
-html,body,#app {
-    /* // width: 100%; */
-    height: 100%;
-}
-
-.copyright {
-    position: absolute;
-    bottom: 0;
-}
-
-.nav {
+html,
+body,
+#app {
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    /* // background: rgba(255, 255, 255, 0.05); */
-    top: 0;
-    z-index: 9999;
-    transition: all .5s;
-   
+    height: 100%;
+    overflow: hidden;
 }
- .el-menu.el-menu--horizontal {
-        border-bottom: 0;
-    }
-
 *::-webkit-scrollbar {
     width: 8px;
     height: 8px;

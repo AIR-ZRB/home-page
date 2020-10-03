@@ -9,35 +9,30 @@
                     <p>{{ test }} <span class="flicker">|</span></p>
                 </div>
 
-
                 <div class="author-link">
-                    <button>关于我</button>
-                    <button>作品</button>
+                    <p @click="shadeToggle">关于我</p>
+                    <p @click="shadeToggle">作品</p>
                 </div>
 
-
-                <glass-piece
-                    v-for="item in myMessage.link"
-                    :key="item.link"
-                    class="author-link"
-                >
-                    <a :href="item.link">
-                        <img
-                            :src="require(`@/assets/icons/${item.icon}.png`)"
-                        />
-                    </a>
-                </glass-piece>
+                <!-- 二级菜单，遮罩层 -->
+                <transition name="shade">
+                    <shade
+                        v-show="shadeIsShow"
+                        :shadeIsShow.sync="shadeIsShow"
+                    />
+                </transition>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import glassPiece from "@/components/glass-piece.vue";
+import shade from "@/components/shade.vue";
 export default {
     data() {
         return {
             test: "",
+            shadeIsShow: false,
             myMessage: {
                 name: "青空",
                 descriptions: [
@@ -46,28 +41,11 @@ export default {
                     "你未来的模样都藏在现在的努力里",
                     "今でもあなたはわたしの光",
                 ],
-                link: [
-                    { icon: "github", link: "https://github.com/AIR-ZRB" },
-                    {
-                        icon: "csdn",
-                        link: "https://blog.csdn.net/weixin_46187747",
-                    },
-                    // { icon: "items", link: "sighttp.qq.com/m://sig" },
-                    {
-                        icon: "QQ",
-                        link: "http://sighttp.qq.com/msgrd?v=1&uin=1824735904",
-                    },
-
-                    {
-                        icon: "music",
-                        link: "https://music.163.com/#/playlist?id=4895282025",
-                    },
-                ],
             },
         };
     },
     components: {
-        glassPiece,
+        shade,
     },
     methods: {
         specialWords() {
@@ -108,6 +86,9 @@ export default {
                 }
             }, 300);
         },
+        shadeToggle() {
+            this.shadeIsShow = true;
+        },
     },
     created() {
         this.specialWords();
@@ -115,20 +96,22 @@ export default {
 };
 </script>
 <style lang="scss">
+@mixin flex-layout($x: none, $y: none, $wrap: wrap) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+    flex-wrap: $wrap;
+}
 .home {
-    // background: black;
     width: 100%;
     height: 100%;
-    // background-size: 100% 100%;
 }
 .me-message {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-layout(center, center);
     width: 100%;
     height: 100%;
     text-align: center;
-    background-image: url("../assets/home-background.jpg");
+    background-image: url("../assets/home-background1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -142,8 +125,6 @@ export default {
     }
 
     .me-description {
-        // color: skyblue; // 字体颜色
-        // color: #fff; // 字体颜色
         h2 {
             font-size: 36px;
         }
@@ -152,7 +133,6 @@ export default {
             margin-top: 10px;
             font-weight: 700;
         }
-
         .flicker {
             animation: flicker 0.4s;
             animation-iteration-count: infinite;
@@ -160,36 +140,44 @@ export default {
     }
     .author-link {
         padding: 0px 20px;
-        // height: 50px;
-        // background: rgba(0,0,0,.5);
         border-radius: 10px;
-        width: 350px;
+        width: 200px;
         margin: 20px auto;
-        display: flex;
-        justify-content: space-between;
-        img {
-            width: 30px;
-            height: 30px;
+        @include flex-layout(space-between);
+
+        p {
+            font-weight: 700;
+            font-size: 20px;
+            cursor: pointer;
         }
     }
+}
+
+.shade-enter,
+.shade-leave-to {
+    transform: translateY(2000px);
+}
+.shade-leave,
+.shade-enter-to {
+    transform: translateY(0);
+}
+.shade-enter-active,
+.shade-leave-active {
+    transition: all 0.3s;
 }
 
 @keyframes flicker {
     from {
         opacity: 0;
-        // display: none;
     }
     to {
         opacity: 1;
-        // display: block;
     }
 }
 
 @media (max-width: 900px) {
     .home .blogs .blog {
         width: 90%;
-        //    height: 300px;
-
         .blog-image {
             width: 100%;
         }
@@ -198,7 +186,6 @@ export default {
 @media (max-width: 500px) {
     .me-message {
         .me-description {
-            // color: #f8f8d9; // 字体颜色
             color: #fff; // 字体颜色
         }
     }
