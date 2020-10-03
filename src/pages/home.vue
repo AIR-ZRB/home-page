@@ -6,29 +6,34 @@
                 <div class="author"></div>
                 <div class="me-description">
                     <h2>{{ myMessage.name }}</h2>
-                    <!-- <p v-for="item in myMessage.descriptions" :key="item">
-                        {{ item }}
-                    </p> -->
                     <p>{{ test }} <span class="flicker">|</span></p>
                 </div>
+
+
                 <div class="author-link">
-                    <a
-                        v-for="item in myMessage.link"
-                        :key="item.link"
-                        :href="item.link"
-                    >
+                    <button>关于我</button>
+                    <button>作品</button>
+                </div>
+
+
+                <glass-piece
+                    v-for="item in myMessage.link"
+                    :key="item.link"
+                    class="author-link"
+                >
+                    <a :href="item.link">
                         <img
-                            :src="require(`../assets/icons/${item.icon}.png`)"
-                            alt=""
+                            :src="require(`@/assets/icons/${item.icon}.png`)"
                         />
                     </a>
-                </div>
+                </glass-piece>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import glassPiece from "@/components/glass-piece.vue";
 export default {
     data() {
         return {
@@ -60,6 +65,9 @@ export default {
                 ],
             },
         };
+    },
+    components: {
+        glassPiece,
     },
     methods: {
         specialWords() {
