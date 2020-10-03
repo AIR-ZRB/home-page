@@ -47,7 +47,7 @@ export default {
                         icon: "csdn",
                         link: "https://blog.csdn.net/weixin_46187747",
                     },
-                    { icon: "items", link: "sighttp.qq.com/m://sig" },
+                    // { icon: "items", link: "sighttp.qq.com/m://sig" },
                     {
                         icon: "QQ",
                         link: "http://sighttp.qq.com/msgrd?v=1&uin=1824735904",
