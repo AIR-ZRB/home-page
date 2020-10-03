@@ -9,6 +9,10 @@
                 <span class="description">{{ item.icon }}</span>
             </glass-piece>
         </div>
+
+        <div class="close" @click="shadeIsHide">
+            <img src="@/assets/icons/close.png" alt="" />
+        </div>
     </div>
 </template>
 
@@ -53,7 +57,7 @@ export default {
     justify-content: $x;
     align-items: $y;
     flex-wrap: $wrap;
-}   
+}
 .shade {
     width: 100%;
     height: 100%;
@@ -68,9 +72,23 @@ export default {
         margin-bottom: 60px;
     }
     .shade-content {
-        width: 50%;
+        width: 40%;
         margin: 100px auto;
         @include flex-layout(space-between, center);
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transition: all 0.3s;
+        cursor: pointer;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+        &:hover {
+            transform: rotate(360deg);
+        }
     }
 }
 </style>

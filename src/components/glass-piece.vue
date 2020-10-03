@@ -21,17 +21,16 @@ export default {};
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap   ;
-position: relative;
+    margin: 0 0 50px 0;
+    position: relative;
     img {
-
-      width: 25px;
-      height: 25px;
+        width: 25px;
+        height: 25px;
     }
     .description {
-      position: absolute;
-      bottom: -30px;
-      color: #fff;
+        position: absolute;
+        bottom: -30px;
+        color: #fff;
     }
 }
 </style>
