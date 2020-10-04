@@ -46,23 +46,47 @@ export default {
             },
             // about
             link: [
-                { icon: "Github", link: "https://github.com/AIR-ZRB" },
+                {
+                    icon: "Github",
+                    name: "Github",
+                    link: "https://github.com/AIR-ZRB",
+                },
                 {
                     icon: "CSDN",
+                    name: "CSDN",
                     link: "https://blog.csdn.net/weixin_46187747",
                 },
                 {
                     icon: "QQ",
+                    name: "QQ",
                     link: "http://sighttp.qq.com/msgrd?v=1&uin=1824735904",
                 },
 
                 {
                     icon: "Music",
+                    name: "Music",
                     link: "https://music.163.com/#/playlist?id=4895282025",
                 },
             ],
             // items
-            items: [{ icon: "calendar", link: "https://www.baidu.com" }],
+            items: [
+                {
+                    icon: "Music1",
+                    name: "青空云音乐",
+                    link: "http://49.232.192.13:3001/",
+                },
+                {
+                    icon: "tab-roulette",
+                    name: "tab-game",
+                    link: "http://air-zrb.gitee.io/tab-roulette/"
+                },
+                {
+                    icon: "Money",
+                    name: "记账软件",
+                    link: "http://air-zrb.gitee.io/accounting/"
+                },
+            
+            ],
         };
     },
     components: {

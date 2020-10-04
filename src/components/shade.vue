@@ -6,7 +6,7 @@
                 <a :href="item.link">
                     <img :src="require(`@/assets/icons/${item.icon}.png`)" />
                 </a>
-                <span class="description">{{ item.icon }}</span>
+                <p class="description">{{ item.name }}</p>
             </glass-piece>
         </div>
 
@@ -55,7 +55,7 @@ export default {
         margin-bottom: 60px;
     }
     .shade-content {
-        width: 50%;
+        width: 60%;
         margin: 100px auto;
     }
     .close {

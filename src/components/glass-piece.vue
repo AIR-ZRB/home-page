@@ -26,18 +26,21 @@ export default {};
         // background-color: #fff;
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    
+        a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        position: relative;
         img {
             width: 25px;
             height: 25px;
         }
         .description {
-            position: absolute;
-            bottom: -30px;
+            margin-top: 10px;
             color: #fff;
         }
     }
