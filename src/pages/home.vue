@@ -187,8 +187,9 @@ export default {
                 left: 0;
                 background: #fff;
                 height: 2px;
+
                 width: 0;
-                transition: all .3s;
+                transition: all 0.3s;
             }
 
             &:hover {
@@ -230,11 +231,33 @@ export default {
         }
     }
 }
+
+@media (max-width: 1000px) {
+    .shade {
+        .shade-content {
+            width: 80%;
+        }
+    }
+    .glass-piece {
+        width: 33.3%;
+    }
+}
+
 @media (max-width: 500px) {
     .me-message {
         .me-description {
             color: #fff; // 字体颜色
         }
+    }
+
+    // 遮罩层的宽度
+    .shade {
+        .shade-content {
+            width: 80%;
+        }
+    }
+    .glass-piece {
+        width: 50%;
     }
 }
 </style>

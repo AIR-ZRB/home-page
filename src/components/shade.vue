@@ -55,9 +55,8 @@ export default {
         margin-bottom: 60px;
     }
     .shade-content {
-        width: 40%;
+        width: 50%;
         margin: 100px auto;
-        @include flex-layout(space-between, center);
     }
     .close {
         position: absolute;

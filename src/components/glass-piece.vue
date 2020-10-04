@@ -1,6 +1,8 @@
 <template>
     <div class="glass-piece">
-        <slot></slot>
+        <div class="piece">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -10,27 +12,34 @@ export default {};
 
 <style lang="scss">
 .glass-piece {
-    width: 80px;
-    height: 80px;
-
-    /* 设置背景半透明黑色 */
-    backdrop-filter: blur(1px);
-    // background-color: #fff;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    width: 25%;
+    float: left;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0 0 50px 0;
-    position: relative;
-    img {
-        width: 25px;
-        height: 25px;
-    }
-    .description {
-        position: absolute;
-        bottom: -30px;
-        color: #fff;
+    margin: 0 0 70px 0;
+    .piece {
+        width: 80px;
+        height: 80px;
+
+        /* 设置背景半透明黑色 */
+        backdrop-filter: blur(1px);
+        // background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+        img {
+            width: 25px;
+            height: 25px;
+        }
+        .description {
+            position: absolute;
+            bottom: -30px;
+            color: #fff;
+        }
     }
 }
 </style>
