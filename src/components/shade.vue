@@ -1,8 +1,8 @@
 <template>
     <div class="shade" @click="shadeIsHide">
         <div class="shade-content">
-            <h2>关于我</h2>
-            <glass-piece v-for="item in link" :key="item.link">
+            <h2>{{_props.showDatas.title}}</h2>
+            <glass-piece v-for="item in _props.showDatas.datas" :key="item.link">
                 <a :href="item.link">
                     <img :src="require(`@/assets/icons/${item.icon}.png`)" />
                 </a>
@@ -19,26 +19,9 @@
 <script>
 import glassPiece from "@/components/glass-piece.vue";
 export default {
-    props: ["shadeIsShow"],
+    props: ["shadeIsShow","showDatas"],
     data() {
-        return {
-            link: [
-                { icon: "Github", link: "https://github.com/AIR-ZRB" },
-                {
-                    icon: "CSDN",
-                    link: "https://blog.csdn.net/weixin_46187747",
-                },
-                {
-                    icon: "QQ",
-                    link: "http://sighttp.qq.com/msgrd?v=1&uin=1824735904",
-                },
-
-                {
-                    icon: "Music",
-                    link: "https://music.163.com/#/playlist?id=4895282025",
-                },
-            ],
-        };
+        return {};
     },
     methods: {
         shadeIsHide() {

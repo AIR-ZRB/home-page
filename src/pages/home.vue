@@ -10,14 +10,15 @@
                 </div>
 
                 <div class="author-link">
-                    <p @click="shadeToggle">关于我</p>
-                    <p @click="shadeToggle">作品</p>
+                    <p @click="shadeToggle('About')">关于我</p>
+                    <p @click="shadeToggle('Items')">作品</p>
                 </div>
 
                 <!-- 二级菜单，遮罩层 -->
                 <transition name="shade">
                     <shade
                         v-show="shadeIsShow"
+                        :showDatas="showDatas"
                         :shadeIsShow.sync="shadeIsShow"
                     />
                 </transition>
@@ -33,6 +34,7 @@ export default {
         return {
             test: "",
             shadeIsShow: false,
+            showDatas: {},
             myMessage: {
                 name: "青空",
                 descriptions: [
@@ -42,6 +44,25 @@ export default {
                     "今でもあなたはわたしの光",
                 ],
             },
+            // about
+            link: [
+                { icon: "Github", link: "https://github.com/AIR-ZRB" },
+                {
+                    icon: "CSDN",
+                    link: "https://blog.csdn.net/weixin_46187747",
+                },
+                {
+                    icon: "QQ",
+                    link: "http://sighttp.qq.com/msgrd?v=1&uin=1824735904",
+                },
+
+                {
+                    icon: "Music",
+                    link: "https://music.163.com/#/playlist?id=4895282025",
+                },
+            ],
+            // items
+            items: [{ icon: "calendar", link: "https://www.baidu.com" }],
         };
     },
     components: {
@@ -86,7 +107,15 @@ export default {
                 }
             }, 300);
         },
-        shadeToggle() {
+        shadeToggle(flag) {
+            const datas = flag === "About" ? this.link : this.items;
+            const showDatas = {
+                title: flag,
+                datas,
+            };
+
+            this.showDatas = showDatas;
+
             this.shadeIsShow = true;
         },
     },
@@ -105,13 +134,14 @@ export default {
 .home {
     width: 100%;
     height: 100%;
+    color: #fff;
 }
 .me-message {
     @include flex-layout(center, center);
     width: 100%;
     height: 100%;
     text-align: center;
-    background-image: url("../assets/home-background1.jpg");
+    background-image: url("../assets/home-background2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -149,6 +179,23 @@ export default {
             font-weight: 700;
             font-size: 20px;
             cursor: pointer;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                background: #fff;
+                height: 2px;
+                width: 0;
+                transition: all .3s;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
         }
     }
 }
