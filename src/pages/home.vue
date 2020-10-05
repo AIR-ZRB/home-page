@@ -59,7 +59,8 @@ export default {
                 {
                     icon: "QQ",
                     name: "QQ",
-                    link: "http://sighttp.qq.com/msgrd?v=1&uin=1824735904",
+                    link: "http://wpa.qq.com/msgrd?v=3&uin=1057605824&site=qq&menu=yes",
+                    // http://wpa.qq.com/msgrd?v=3&uin=1057605824&site=qq&menu=yes
                 },
 
                 {
