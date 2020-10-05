@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <div class="main" v-title data-title="青空"></div>
         <!-- 主页头部 -->
         <div class="me-message">
             <div class="me-message-box">
@@ -59,7 +60,8 @@ export default {
                 {
                     icon: "QQ",
                     name: "QQ",
-                    link: "http://wpa.qq.com/msgrd?v=3&uin=1057605824&site=qq&menu=yes",
+                    link:
+                        "http://wpa.qq.com/msgrd?v=3&uin=1057605824&site=qq&menu=yes",
                     // http://wpa.qq.com/msgrd?v=3&uin=1057605824&site=qq&menu=yes
                 },
 
@@ -79,14 +81,13 @@ export default {
                 {
                     icon: "tab-roulette",
                     name: "tab-game",
-                    link: "http://air-zrb.gitee.io/tab-roulette/"
+                    link: "http://air-zrb.gitee.io/tab-roulette/",
                 },
                 {
                     icon: "Money",
                     name: "记账软件",
-                    link: "http://air-zrb.gitee.io/accounting/"
+                    link: "http://air-zrb.gitee.io/accounting/",
                 },
-            
             ],
         };
     },
