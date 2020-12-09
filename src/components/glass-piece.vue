@@ -23,8 +23,8 @@ export default {};
 
         /* 设置背景半透明黑色 */
         backdrop-filter: blur(1px);
-        // background-color: #fff;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: #EBEBEB;  
+        // background-color: rgba(255, 255, 255, 0.7);
         border-radius: 5px;
     
         a {
